@@ -30,7 +30,7 @@ License: GPL-3.0
 
 ## 4. Paths
 - Base dirs: src/ <> · docs/phases/ <> · docs/sessions/ <> · tests/ <>
-- Entry files present: ENTRY.md, RULES.md (in .ai-rules/), mind_map.md, architecture.md,
+- Entry files present: ENTRY.md, RULES.md (in senior-rules/), mind_map.md, architecture.md,
   agents.md, memory.md, development_phases_entry.md, all_in_one_track.md, session_track.md, CHANGELOG.md
 - Main security spec: <path> · Main architecture file: <path>
 

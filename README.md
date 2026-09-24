@@ -25,10 +25,10 @@ The most comprehensive, enforceable rule system ever created for AI-assisted sof
 
 ```bash
 # 1. Clone (or copy) this rule set into your project
-git clone <this-repo> .ai-rules        # or copy the folder manually
+git clone <this-repo> senior-rules        # or copy the folder manually
 
 # 2. Create your system's adapter
-cp .ai-rules/adapters/RULES_HINTS.template.md RULES_HINTS.md
+cp senior-rules/adapters/RULES_HINTS.template.md RULES_HINTS.md
 #    -> fill in your stack, commands, and conventions
 
 # 3. Point your AI assistant at the entry file
@@ -36,11 +36,11 @@ cp .ai-rules/adapters/RULES_HINTS.template.md RULES_HINTS.md
 #    .cursorrules / your tool's equivalent):
 ```
 
-> **AI ASSISTANT INSTRUCTION:** Before any work, read `ENTRY.md` at the repository root and obey every rule in it. The rules in `.ai-rules/` are binding. `RULES_HINTS.md` adapts them to this system. Run `.ai-rules/validators/validate.py` after every implementation phase.
+> **AI ASSISTANT INSTRUCTION:** Before any work, read `ENTRY.md` at the repository root and obey every rule in it. The rules in `senior-rules/` are binding. `RULES_HINTS.md` adapts them to this system. Run `senior-rules/validators/validate.py` after every implementation phase.
 
 ```bash
 # 4. Verify
-python3 .ai-rules/validators/validate.py .
+python3 senior-rules/validators/validate.py .
 ```
 
 ### Option B: npm (works with ANY AI model — Claude, GPT, Cursor, Gemini, etc.)
@@ -59,12 +59,12 @@ npx admr-install
 ```
 
 The npm installer automatically:
-1. Copies all rule files into `.ai-rules/`
+1. Copies all rule files into `senior-rules/`
 2. Creates `RULES_HINTS.md` from the template
 3. Creates/updates `AGENTS.md` with the AI instruction block
 4. Sets up `package.json` scripts for validation
 
-> **Works with every AI model:** Claude Code, ChatGPT, Cursor, Gemini, Copilot, Windsurf, or any other AI coding assistant — the `.ai-rules/` folder and `AGENTS.md` instruction block are model-agnostic.
+> **Works with every AI model:** Claude Code, ChatGPT, Cursor, Gemini, Copilot, Windsurf, or any other AI coding assistant — the `senior-rules/` folder and `AGENTS.md` instruction block are model-agnostic.
 
 ## Repository layout
 

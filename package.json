@@ -8,7 +8,7 @@
   },
   "scripts": {
     "install:rules": "node scripts/admr-install.js",
-    "validate": "python3 .ai-rules/validators/validate.py ."
+    "validate": "python3 senior-rules/validators/validate.py ."
   },
   "keywords": [
     "ai",

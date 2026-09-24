@@ -23,7 +23,7 @@ is failure. **Verified, evidenced, documented, and tested** is done.
 2. Read `RULES.md` (the complete catalog).
 3. Read `RULES_HINTS.md` (this system's adapter — stack, commands, conventions).
 4. Read the system's entry files: `session_track.md` (resume point), `development_phases_entry.md` (phase status), `architecture.md`, and `memory.md` if present.
-5. Run `python3 .ai-rules/validators/validate.py .` and confirm the structure is healthy.
+5. Run `python3 senior-rules/validators/validate.py .` and confirm the structure is healthy.
 6. Only then begin work. If step 5 reports failures, fix them first or report them.
 
 ## 2. Non-negotiable principles (precedence order)

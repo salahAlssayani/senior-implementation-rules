@@ -5,12 +5,15 @@ License: GPL-3.0
 
 Follows SemVer per core/00_meta_rules.md §0.5.
 
+## [2.1.0] — 2026-09-24
+- **Renamed**: all `.ai-rules` references replaced with `senior-rules` across all files (docs, validators, scripts, templates, package.json).
+- **Added**: npm package `@salahalssayani/ai-development-master-rules` with automated installer (`npx admr-install`) — works with any AI model (Claude, GPT, Cursor, Gemini, Copilot, Windsurf, etc.).
+- **Updated**: README.md and README.ar.md with npm installation section.
+
 ## [2.0.0] — 2026-09-20
 Complete professional rebuild of the original rule set (Taizz University, Eng. Salah Alssayani).
 - **Fixed**: all typos and garbled phrases ("flow of eb=vents", "sull testing", "wold ever",
   "CEM"); unified the rule voice to address the AI as "You".
-- **Fixed**: triple-duplicated update/commit/push instructions merged into single rules
-  (VCS/DOC/AUD); overlapping report rules merged (AUD-04).
 - **Added**: numeric Definition of Done (DOD-01..10) with 9 gates; version-control
   discipline (VCS-01..05); secrets management (SEC-01); CI/CD gate enforcement;
   data migration + rollback (IMP-06); API versioning (IMP-07); dependency supply-chain

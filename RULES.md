@@ -19,7 +19,7 @@ Severity: **CRITICAL** = blocks completion · **HIGH** = pass or justify in writ
 | GEN-05 | MEDIUM | Where parallel work is possible, delegate independent subtasks; re-verify every delegated claim against the repo yourself. | Delegated items each have independent verification output. |
 | GEN-06 | CRITICAL | These rules are framework-agnostic. The system's `RULES_HINTS.md` adapter binds them to the stack. Never hardcode another stack's conventions into core work. | Adapter file exists and validator passes. |
 | GEN-07 | CRITICAL | Rule precedence: SEC > DOD > GEN-03 > IMP > DOC/AUD > all else. Conflicts resolve upward. | Audit notes cite precedence when rules collide. |
-| GEN-08 | HIGH | At session start, confirm the rules version (`.ai-rules/VERSION`) matches the version pinned in `RULES_HINTS.md`; if newer, re-read changed rules. | Startup protocol output shows version check. |
+| GEN-08 | HIGH | At session start, confirm the rules version (`senior-rules/VERSION`) matches the version pinned in `RULES_HINTS.md`; if newer, re-read changed rules. | Startup protocol output shows version check. |
 
 ## SES — Sessions & Recovery
 

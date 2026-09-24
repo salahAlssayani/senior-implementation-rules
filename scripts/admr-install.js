@@ -11,7 +11,7 @@ const path = require('path');
 const os = require('os');
 
 const RULES_SRC = path.join(__dirname, '..');
-const TARGET_DIR = path.join(process.cwd(), '.ai-rules');
+const TARGET_DIR = path.join(process.cwd(), 'senior-rules');
 
 function copyDir(src, dest) {
   if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
@@ -35,15 +35,15 @@ function main() {
 
   // Check if target already exists
   if (fs.existsSync(TARGET_DIR)) {
-    console.log('⚠  .ai-rules/ already exists. Backing up to .ai-rules-backup/');
-    const backup = path.join(process.cwd(), '.ai-rules-backup');
+    console.log('⚠  senior-rules/ already exists. Backing up to senior-rules-backup/');
+    const backup = path.join(process.cwd(), 'senior-rules-backup');
     if (fs.existsSync(backup)) fs.rmSync(backup, { recursive: true });
     fs.renameSync(TARGET_DIR, backup);
   }
 
   // Copy all rules files
   copyDir(RULES_SRC, TARGET_DIR);
-  console.log('✓ Rules copied to .ai-rules/');
+  console.log('✓ Rules copied to senior-rules/');
 
   // Create RULES_HINTS.md from template
   const templatePath = path.join(TARGET_DIR, 'adapters', 'RULES_HINTS.template.md');
@@ -58,7 +58,7 @@ function main() {
   if (!fs.existsSync(agentsPath)) {
     const agentsContent = `# AI Assistant Instructions
 
-> **AI ASSISTANT INSTRUCTION:** Before any work, read \`ENTRY.md\` at the repository root and obey every rule in it. The rules in \`.ai-rules/\` are binding. \`RULES_HINTS.md\` adapts them to this system. Run \`.ai-rules/validators/validate.py\` after every implementation phase.
+> **AI ASSISTANT INSTRUCTION:** Before any work, read \`ENTRY.md\` at the repository root and obey every rule in it. The rules in `senior-rules/` are binding. `RULES_HINTS.md` adapts them to this system. Run `senior-rules/validators/validate.py` after every implementation phase.
 
 ---
 
@@ -73,8 +73,8 @@ function main() {
   console.log();
   console.log('═══ Installation Complete ═══');
   console.log('Next steps:');
-  console.log('  1. Edit .ai-rules/RULES_HINTS.md with your stack details');
-  console.log('  2. Run: python3 .ai-rules/validators/validate.py .');
+  console.log('  1. Edit senior-rules/RULES_HINTS.md with your stack details');
+  console.log('  2. Run: python3 senior-rules/validators/validate.py .');
   console.log('  3. Start working with your AI coding assistant');
 }
 

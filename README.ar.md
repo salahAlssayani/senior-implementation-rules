@@ -27,10 +27,10 @@ License: GPL-3.0
 
 ```bash
 # 1. استنسخ (أو انسخ) مجموعة القواعد داخل مشروعك
-git clone <this-repo> .ai-rules        # أو انسخ المجلد يدوياً
+git clone <this-repo> senior-rules        # أو انسخ المجلد يدوياً
 
 # 2. أنشئ ملف موائمة نظامك
-cp .ai-rules/adapters/RULES_HINTS.template.md RULES_HINTS.md
+cp senior-rules/adapters/RULES_HINTS.template.md RULES_HINTS.md
 #    ← املأ تقنياتك وأوامرك وتقاليد مشروعك
 
 # 3. وجّه مساعدك الذكي إلى ملف الدخول
@@ -38,11 +38,11 @@ cp .ai-rules/adapters/RULES_HINTS.template.md RULES_HINTS.md
 #    .cursorrules / ما يعادلها في أداتك):
 ```
 
-> **تعليمات للمساعد الذكي:** قبل أي عمل، اقرأ `ENTRY.md` في جذر المستودع والتزم بكل قاعدة فيه. القواعد في `.ai-rules/` إلزامية. ملف `RULES_HINTS.md` يكيّفها مع هذا النظام. شغّل `.ai-rules/validators/validate.py` بعد كل مرحلة تنفيذ.
+> **تعليمات للمساعد الذكي:** قبل أي عمل، اقرأ `ENTRY.md` في جذر المستودع والتزم بكل قاعدة فيه. القواعد في `senior-rules/` إلزامية. ملف `RULES_HINTS.md` يكيّفها مع هذا النظام. شغّل `senior-rules/validators/validate.py` بعد كل مرحلة تنفيذ.
 
 ```bash
 # 4. تحقق
-python3 .ai-rules/validators/validate.py .
+python3 senior-rules/validators/validate.py .
 ```
 
 ### الخيار ب: npm (يعمل مع ANY نموذج ذكاء اصطناعي — Claude, GPT, Cursor, Gemini, إلخ)
@@ -61,12 +61,12 @@ npx admr-install
 ```
 
 المثبّت عبر npm يقوم تلقائياً بـ:
-1. نسخ جميع ملفات القواعد إلى `.ai-rules/`
+1. نسخ جميع ملفات القواعد إلى `senior-rules/`
 2. إنشاء `RULES_HINTS.md` من القالب
 3. إنشاء/تحديث `AGENTS.md` مع كتلة تعليمات الذكاء الاصطناعي
 4. إعداد سكريبتات التحقق في `package.json`
 
-> **يعمل مع كل نماذج الذكاء الاصطناعي:** Claude Code, ChatGPT, Cursor, Gemini, Copilot, Windsurf, أو أي مساعد برمجي ذكي آخر — مجلد `.ai-rules/` وكتلة التعليمات في `AGENTS.md` لا يعتمدان على نموذج محدد.
+> **يعمل مع كل نماذج الذكاء الاصطناعي:** Claude Code, ChatGPT, Cursor, Gemini, Copilot, Windsurf, أو أي مساعد برمجي ذكي آخر — مجلد `senior-rules/` وكتلة التعليمات في `AGENTS.md` لا يعتمدان على نموذج محدد.
 
 ## بنية المستودع
 

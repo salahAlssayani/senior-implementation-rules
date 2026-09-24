@@ -12,7 +12,7 @@ import os, re, sys
 
 FORBIDDEN_TOKENS = ["eb=vents", "sull testing", "wold ever", "alert(", "confirm("]
 # NOTE: alert(/confirm( are forbidden in *product code*, not in rule docs; checked
-# against source dirs only (section below), never against .ai-rules/ itself.
+# against source dirs only (section below), never against senior-rules/ itself.
 RULE_ID_RE = re.compile(r"\b((GEN|SES|DOC|DOD|IMP|SEC|TST|LOG|UI|VCS|AUD|COM|ADP)-\d{2})\b")
 MD_LINK_RE = re.compile(r"\[[^\]]*\]\(([^)#\s]+?)(#[^)]*)?\)")
 
@@ -41,7 +41,7 @@ def walk_md(root, skip_dirs={".git", "node_modules", "vendor", "dist", "build", 
 
 def main():
     root = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
-    rules_dir = os.path.join(root, ".ai-rules")
+    rules_dir = os.path.join(root, "senior-rules")
     errors, checks = [], [0, 0]
 
     def ok(name):
@@ -56,11 +56,11 @@ def main():
 
     # 1. Rules directory presence
     if not os.path.isdir(rules_dir):
-        bad("rules-dir", ".ai-rules/ not found — run installation first")
+        bad("rules-dir", "senior-rules/ not found — run installation first")
         return report(errors)
     ok("rules-dir exists")
 
-    # 2. Authorship signature on every file under .ai-rules/
+    # 2. Authorship signature on every file under senior-rules/
     sig_total = sig_fail = 0
     for dp, dns, fns in os.walk(rules_dir):
         dns[:] = [d for d in dns if d != "__pycache__"]
@@ -73,14 +73,14 @@ def main():
     if sig_fail == 0:
         ok(f"signatures ({sig_total} files start with 'Kimi')")
 
-    # 3. Canonical entry set (rules files resolve in root OR .ai-rules/)
+    # 3. Canonical entry set (rules files resolve in root OR senior-rules/)
     required = ["ENTRY.md", "RULES.md", "CHANGELOG.md", "VERSION",
                 "session_track.md", "development_phases_entry.md",
                 "all_in_one_track.md", "architecture.md", "memory.md",
                 "mind_map.md", "agents.md", "RULES_HINTS.md"]
     for rel in required:
         if any(os.path.isfile(os.path.join(root, base, rel))
-               for base in ("", ".ai-rules")):
+               for base in ("", "senior-rules")):
             ok(f"entry file: {rel}")
         else:
             bad("entry file", f"missing {rel} (create per DOC-01)")
@@ -88,7 +88,7 @@ def main():
     # 4. Relative markdown links resolve
     broken = 0
     for p in walk_md(root):
-        if ".ai-rules" in p.split(os.sep) and "adapters" in p and p.endswith(".template.md"):
+        if "senior-rules" in p.split(os.sep) and "adapters" in p and p.endswith(".template.md"):
             continue  # template links are illustrative
         with open(p, encoding="utf-8") as f:
             text = f.read()

@@ -4,7 +4,7 @@ License: GPL-3.0
 # Implementation Plan — <phase slug>
 
 - Phase: <name> · Status: PLANNED | IN_PROGRESS | BLOCKED | CLOSED
-- Rules version: <.ai-rules VERSION> · Session: <NNN>
+- Rules version: <senior-rules VERSION> · Session: <NNN>
 - Owner: <name/email> · License: <project license>
 
 ## 1. Objective & scope
