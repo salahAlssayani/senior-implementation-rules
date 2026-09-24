@@ -1,6 +1,8 @@
 * text=auto
 *.md text eol=lf
 *.py text eol=lf
+*.js text eol=lf
 *.template.md text eol=lf
 VERSION text eol=lf
 .gitignore text eol=lf
+package.json text eol=lf

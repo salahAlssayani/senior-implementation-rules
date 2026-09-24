@@ -23,6 +23,8 @@ License: GPL-3.0
 
 ## التثبيت
 
+### الخيار أ: استنساخ Git (يدوي)
+
 ```bash
 # 1. استنسخ (أو انسخ) مجموعة القواعد داخل مشروعك
 git clone <this-repo> .ai-rules        # أو انسخ المجلد يدوياً
@@ -42,6 +44,29 @@ cp .ai-rules/adapters/RULES_HINTS.template.md RULES_HINTS.md
 # 4. تحقق
 python3 .ai-rules/validators/validate.py .
 ```
+
+### الخيار ب: npm (يعمل مع ANY نموذج ذكاء اصطناعي — Claude, GPT, Cursor, Gemini, إلخ)
+
+```bash
+# التثبيت العالمي
+npm install -g @salahalssayani/ai-development-master-rules
+
+# أو تثبيته كاعتماد تطوير في مشروعك
+npm install --save-dev @salahalssayani/ai-development-master-rules
+
+# ثم شغّل المثبّت
+npx admr-install
+# أو: npm run install:rules
+# أو: node scripts/admr-install.js
+```
+
+المثبّت عبر npm يقوم تلقائياً بـ:
+1. نسخ جميع ملفات القواعد إلى `.ai-rules/`
+2. إنشاء `RULES_HINTS.md` من القالب
+3. إنشاء/تحديث `AGENTS.md` مع كتلة تعليمات الذكاء الاصطناعي
+4. إعداد سكريبتات التحقق في `package.json`
+
+> **يعمل مع كل نماذج الذكاء الاصطناعي:** Claude Code, ChatGPT, Cursor, Gemini, Copilot, Windsurf, أو أي مساعد برمجي ذكي آخر — مجلد `.ai-rules/` وكتلة التعليمات في `AGENTS.md` لا يعتمدان على نموذج محدد.
 
 ## بنية المستودع
 

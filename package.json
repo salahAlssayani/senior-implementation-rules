@@ -1,0 +1,43 @@
+{
+  "name": "@salahalssayani/ai-development-master-rules",
+  "version": "2.0.0",
+  "description": "The most comprehensive, enforceable rule system for AI-assisted software development. Install via npm and load into any AI coding assistant.",
+  "main": "index.js",
+  "bin": {
+    "admr-install": "./scripts/admr-install.js"
+  },
+  "scripts": {
+    "install:rules": "node scripts/admr-install.js",
+    "validate": "python3 .ai-rules/validators/validate.py ."
+  },
+  "keywords": [
+    "ai",
+    "rules",
+    "admr",
+    "development",
+    "gpt",
+    "claude",
+    "cursor",
+    "ai-coding",
+    "prompt-engineering",
+    "agent-rules"
+  ],
+  "author": "Kimi (Moonshot AI) & Salah Alssayani",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:salahAlssayani/senior-implementation-rules.git"
+  },
+  "homepage": "https://github.com/salahAlssayani/senior-implementation-rules",
+  "files": [
+    "ENTRY.md",
+    "RULES.md",
+    "VERSION",
+    "CHANGELOG.md",
+    "core/",
+    "templates/",
+    "adapters/",
+    "validators/",
+    "scripts/"
+  ]
+}

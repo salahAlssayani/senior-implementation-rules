@@ -21,6 +21,8 @@ The most comprehensive, enforceable rule system ever created for AI-assisted sof
 
 ## Installation
 
+### Option A: Git Clone (manual)
+
 ```bash
 # 1. Clone (or copy) this rule set into your project
 git clone <this-repo> .ai-rules        # or copy the folder manually
@@ -40,6 +42,29 @@ cp .ai-rules/adapters/RULES_HINTS.template.md RULES_HINTS.md
 # 4. Verify
 python3 .ai-rules/validators/validate.py .
 ```
+
+### Option B: npm (works with ANY AI model — Claude, GPT, Cursor, Gemini, etc.)
+
+```bash
+# Install globally
+npm install -g @salahalssayani/ai-development-master-rules
+
+# Or install as a dev dependency in your project
+npm install --save-dev @salahalssayani/ai-development-master-rules
+
+# Then run the installer
+npx admr-install
+# or: npm run install:rules
+# or: node scripts/admr-install.js
+```
+
+The npm installer automatically:
+1. Copies all rule files into `.ai-rules/`
+2. Creates `RULES_HINTS.md` from the template
+3. Creates/updates `AGENTS.md` with the AI instruction block
+4. Sets up `package.json` scripts for validation
+
+> **Works with every AI model:** Claude Code, ChatGPT, Cursor, Gemini, Copilot, Windsurf, or any other AI coding assistant — the `.ai-rules/` folder and `AGENTS.md` instruction block are model-agnostic.
 
 ## Repository layout
 
